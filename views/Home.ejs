@@ -6,6 +6,7 @@
     <title><%= title %></title>
 </head>
 <body>
+    <%- include('partials/navigation'); %>
     <h1>Add new student</h1>
     <form action="/add-student" method="POST">
         <label for="fullName">Full Name:</label>

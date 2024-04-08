@@ -6,6 +6,16 @@
     <title><%= title %></title>
 </head>
 <body>
+    <%- include('partials/navigation'); %>
     <h1>List</h1>
+
+    <ul>
+        <% students.forEach(function(student) { %>
+        <li>
+            <p><%= student.fullName %></p>
+            <p><%= student.code %></p>
+            <p><%= student.fieldOfStudies %></p>
+        </li> <%}); %>
+    </ul>
 </body>
 </html>

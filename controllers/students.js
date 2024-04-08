@@ -1,4 +1,3 @@
-
 const express = require("express");
 const router = express.Router();
 
@@ -13,9 +12,13 @@ router.post("/add-student", (req, res) => {
   const { fullName, code, fieldOfStudies } = req.body;
   console.log(`New student added: ${fullName}, ${code}, ${fieldOfStudies}`);
 
-  students.push({id: nextId,fullName,code,fieldOfStudies,});
+  students.push({ id: nextId, fullName, code, fieldOfStudies });
   nextId++;
   res.redirect("/success");
+});
+
+router.get("/students-list", (req, res) => {
+  res.render("List", { title: "List", students });
 });
 
 module.exports = router;
