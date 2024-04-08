@@ -5,6 +5,11 @@ const PORT = 3000;
 app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({ extended: true }));
 
+const studentsController = require('./controllers/students');
+const errorController = require('./controllers/error');
+
+app.use('/', studentsController);
+app.use('*', errorController);
 
 app.get('/', (req, res) => {
   res.render('Home', { title: 'Home' });
